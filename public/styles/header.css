@@ -1,0 +1,23 @@
+/*design page for the header */
+
+header {
+	height: 520px;
+	width: 100%;
+	background-color: burlywood;
+	padding-top: 120px;
+	background-image: url("../images/foggy-birds.png");
+}
+
+.avatar {
+	position: relative;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+}
+
+.name {
+	position: relative;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+}
