@@ -38,7 +38,7 @@
 }
 
 .tweet-content {
-    width: 80%;
+		font-size: 18px;
     display: flex;
 		position: relative;
 		padding: 15px;
