@@ -1,6 +1,6 @@
 /*display the new tweet form */
 
-footer {
+.new-tweet footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
