@@ -16,12 +16,14 @@
 	border-color: #545149;
 	border-style: solid;
 	opacity: .5;
+	margin-bottom: 30px;
 	
 }
 
-.tweet:hover {
+.tweet:hover .tweet-handle {
 	box-shadow: 5px 5px 2px grey;
 }
+
 
 .tweet-profile {
 	display: flex;

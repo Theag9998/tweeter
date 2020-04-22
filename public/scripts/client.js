@@ -6,7 +6,7 @@
 
  // const $img = $('<img>').attr('src', ...)
 
-
+ $(document).ready(function() {
 const data = [
 	{
 		"user": {
@@ -34,7 +34,7 @@ const data = [
 //<section class="tweet-container">
 
 const renderTweets = function(tweets) {
-	const $tweets = $('<section>').addClass("tweet-container")
+	const $tweets = $('.tweet-container')
 	for (let tweet of tweets) {
 		$tweets.append(createTweetElement(tweet))
 	}
@@ -54,7 +54,7 @@ const createTweetElement = function(tweet) {
 	const $line = $('<hr />')
 	//footer
 	const $footer = $('<footer>');
-	const $datePosted = $("<div>").addClass("date-posted").text(tweet.created_at);
+	const $datePosted = $("<div>").addClass("date-posted").text(tweet.created_at); //moment.js
 	const $links = $('<div>').addClass("little-links").text("LINKS")
 	//append header
 	$tweetProfile.append($tweetPicture).append($tweetName)
@@ -67,11 +67,7 @@ const createTweetElement = function(tweet) {
 	return $tweet;
 }
 
-// const $tweet = createTweetElement(tweetData);
-// $(document).ready(function() {
-// 	$('.tweet-container').append($tweet);
-// })
+ renderTweets(data);
 
-
-	renderTweets(data);
-
+	
+})
