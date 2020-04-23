@@ -54,7 +54,7 @@ const createTweetElement = function(tweet) {
 	const $line = $('<hr />')
 	//footer
 	const $footer = $('<footer>');
-	const $datePosted = $("<div>").addClass("date-posted").text(tweet.created_at); //moment.js
+	const $datePosted = $("<div>").addClass("date-posted").text(tweet.created_at); //moment
 	const $links = $('<div>').addClass("little-links").text("LINKS")
 	//append header
 	$tweetProfile.append($tweetPicture).append($tweetName)
@@ -67,7 +67,19 @@ const createTweetElement = function(tweet) {
 	return $tweet;
 }
 
- renderTweets(data);
-
+renderTweets(data);
+ $('form').submit(function(event) {
+	event.preventDefault();
+	const self = (this);
+	const formData = $(this).serialize();
+	$.post('/tweets', formData)
+		.then(() => {
+			$(self)[0].reset();
+			renderTweets(data)
+		})
+		.catch(err => console.log(err))
+ })
 	
 })
+
+

@@ -20,7 +20,7 @@
 	
 }
 
-.tweet:hover .tweet-handle {
+.tweet:hover {
 	box-shadow: 5px 5px 2px grey;
 }
 
