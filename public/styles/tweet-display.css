@@ -19,10 +19,20 @@
 	margin-bottom: 30px;
 	
 }
-
+/*style for hover event */
 .tweet:hover {
 	box-shadow: 5px 5px 2px grey;
+	opacity: 1;
 }
+
+.tweet-handle {
+	opacity: 0;
+}
+
+.tweet:hover .tweet-handle {
+	opacity: .5;
+}
+
 
 
 .tweet-profile {
@@ -54,3 +64,4 @@
 .tweet-handle {
 	opacity: 0;
 }
+

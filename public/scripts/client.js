@@ -28,7 +28,7 @@ const createTweetElement = function(tweet) {
 	const $tweetName = $('<div>').addClass("tweet-name").text(tweet.user.name);
 	const $tweetHandle = $("<div>").addClass("tweet-handle").text(tweet.user.handle)
 	//content
-	const $tweetContent = $('<div>').addClass("tweet-content").text(tweet.content.text)
+	const $tweetContent = $('<p>').addClass("tweet-content").text(tweet.content.text)
 	const $line = $('<hr />')
 	//footer
 	const $footer = $('<footer>');
@@ -45,31 +45,39 @@ const createTweetElement = function(tweet) {
 	return $tweet;
 }
 
+
 //post to server using ajax to post tweet text to server
  $('form').submit(function(event) {
 	event.preventDefault();
 	const self = (this);
+	const characters = Number($(".counter").html())
 	const formData = $(this).serialize();
-	$.post('/tweets', formData)
+
+ 	//implement validation before sending text to server
+	if (formData === "text=" || formData === "text=null") {
+		alert("No text entered")
+		//check character length
+	} else if (characters < 0) {
+		alert("Too many characters")
+	} else {
+		$.post('/tweets', formData)
 		.then(() => {
 			$(self)[0].reset();
-			renderTweets(data)
 		})
 		.catch(err => console.log(err))
+	}
  })
 
  //ajax get request to server to fetch tweet data
  const loadTweets = function () {
+	event.preventDefault();
 	 $.getJSON('/tweets')
 	 .then((tweets) => {
 		 //display the tweets from the data 
 		 renderTweets(tweets)
 	 })
-	 
-		 
-		 
+	}
 	
- }
 	loadTweets()
 })
 
