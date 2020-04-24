@@ -55,14 +55,19 @@ const createTweetElement = function(tweet) {
 	const self = (this);
 	const characters = Number($(".counter").html())
 	const formData = $(this).serialize();
-
- 	//implement validation before sending text to server
+ 	//implement validation before sending text to server display warning if no text
 	if (formData === "text=" || formData === "text=null") {
-		alert("No text entered")
-		//check character length
+		$(".warning").slideUp("slow")
+		$(".warning").slideDown("slow").text("No text was entered!")
+		
+
+		//check character length display warning if characters over 140
 	} else if (characters < 0) {
-		alert("Too many characters")
+		$(".warning").slideUp("slow")
+		$(".warning").slideDown("slow").text("Too many characters!")
+		
 	} else {
+		$(".warning").slideUp("slow")
 		$.post('/tweets', formData)
 		.then(() => {
 			$(self)[0].reset();
@@ -71,6 +76,7 @@ const createTweetElement = function(tweet) {
 		.catch(err => console.log(err))
 	}
  })
+ 
 
  //ajax get request to server to fetch tweet data
  const loadTweets = function () {
