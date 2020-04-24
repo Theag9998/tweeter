@@ -7,13 +7,15 @@
  // const $img = $('<img>').attr('src', ...)
 
  $(document).ready(function() {
+	
 
 
 //render list of new tweets
 const renderTweets = function(tweets) {
 	const $tweets = $('.tweet-container')
+	$tweets.empty()
 	for (let tweet of tweets) {
-		$tweets.append(createTweetElement(tweet))
+		$tweets.prepend(createTweetElement(tweet))
 	}
 	return $tweets
 }
@@ -48,6 +50,7 @@ const createTweetElement = function(tweet) {
 
 //post to server using ajax to post tweet text to server
  $('form').submit(function(event) {
+
 	event.preventDefault();
 	const self = (this);
 	const characters = Number($(".counter").html())
@@ -63,6 +66,7 @@ const createTweetElement = function(tweet) {
 		$.post('/tweets', formData)
 		.then(() => {
 			$(self)[0].reset();
+			loadTweets()
 		})
 		.catch(err => console.log(err))
 	}
@@ -70,15 +74,18 @@ const createTweetElement = function(tweet) {
 
  //ajax get request to server to fetch tweet data
  const loadTweets = function () {
-	event.preventDefault();
+	
 	 $.getJSON('/tweets')
 	 .then((tweets) => {
 		 //display the tweets from the data 
 		 renderTweets(tweets)
+		 
 	 })
 	}
-	
+
+
 	loadTweets()
+	
 })
 
 
