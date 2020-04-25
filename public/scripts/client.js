@@ -26,7 +26,8 @@ const createTweetElement = function(tweet) {
 	//header
 	const $header = $('<header>');
 	const $tweetProfile = $('<div>').addClass("tweet-profile")
-	const $tweetPicture = $('<div>').addClass("tweet-picture").text("PICTURE")
+	const $tweetPicture = $('<img>').attr('src', tweet.user.avatars)
+	//const $tweetPicture = $('<div>').addClass("tweet-picture").text("PICTURE")
 	const $tweetName = $('<div>').addClass("tweet-name").text(tweet.user.name);
 	const $tweetHandle = $("<div>").addClass("tweet-handle").text(tweet.user.handle)
 	//content
@@ -34,11 +35,18 @@ const createTweetElement = function(tweet) {
 	const $line = $('<hr />')
 	//footer
 	const $footer = $('<footer>');
-	const $datePosted = $("<div>").addClass("date-posted").text(tweet.created_at); //moment
-	const $links = $('<div>').addClass("little-links").text("LINKS")
+	const $datePosted = moment().startOf('day').fromNow();
+	//$("<div>").addClass("date-posted").text(tweet.created_at); //moment
+	//create links
+	const $links = $('<div>').addClass("little-links")
+	const $flaglink = $('<i>').addClass("fas fa-flag")
+	const $heartlink = $('<i>').addClass("fas fa-heart")
+	const $retweetlink = $('<i>').addClass("fas fa-retweet")
 	//append header
 	$tweetProfile.append($tweetPicture).append($tweetName)
 	$header.append($tweetProfile).append($tweetHandle)
+	//append links
+	$links.append($flaglink).append($heartlink).append($retweetlink)
 	//append footer
 	$footer.append($datePosted).append($links)
 	//append file

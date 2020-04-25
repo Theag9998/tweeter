@@ -1,23 +1,40 @@
 /*design page for the header */
 
-body header {
-	height: 520px;
-	width: 100%;
-	background-color: burlywood;
-	padding-top: 120px;
-	background-image: url("../images/foggy-birds.png");
+
+/* Tablet Styles */
+@media only screen and (min-width: 500px) {
+	body header {
+		height: 520px;
+		width: 100%;
+		background-color: burlywood;
+		padding-top: 120px;
+		background-image: url("../images/foggy-birds.png");
+	}
+	
+	.avatar {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.name {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
-.avatar {
-	position: relative;
-	display: flex;
-	align-items: center;
-  justify-content: center;
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  
+  body header {
+		margin-top: 160px;
+		margin-left: 50px;
+		height: 500px;
+    width: 50%;
+    padding-top: 100px;
+  }
 }
 
-.name {
-	position: relative;
-	display: flex;
-	align-items: center;
-  justify-content: center;
-}

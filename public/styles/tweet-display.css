@@ -1,66 +1,86 @@
-.tweet header {
-	background-color: #f4f1ec;
-	background-image: none;
-	display: flex;
-	justify-content: space-between;
-	padding: 15px;
-	height: 75px;
-}
+/* design page for tweet display*/
 
-.tweet-container {
-	padding-top: 50px;
-	height: 500px;
-}
-
-.tweet {
-	border-color: #545149;
-	border-style: solid;
-	opacity: .5;
-	margin-bottom: 30px;
-	
-}
-/*style for hover event */
-.tweet:hover {
-	box-shadow: 5px 5px 2px grey;
-	opacity: 1;
-}
-
-.tweet-handle {
-	opacity: 0;
-}
-
-.tweet:hover .tweet-handle {
-	opacity: .5;
-}
-
-
-
-.tweet-profile {
-	display: flex;
-}
-
-.tweet-name {
-	display: inline;
-}
-
-.tweet footer {
-	display: flex;
-  justify-content: space-between;
-  padding: 15px;
-}
-
-.tweet-content {
-		font-size: 18px;
-    display: flex;
-		position: relative;
+/* Tablet Styles */
+@media only screen and (min-width: 500px) {
+  .tweet header {
+		background-color: #f4f1ec;
+		background-image: none;
+		display: flex;
+		justify-content: space-between;
 		padding: 15px;
-}
-.tweet hr {
-	margin: 0 10px;
-	border-bottom: 2px solid #545149;
-	color: #545149;
+		height: 75px;
+	}
+	
+	.tweet-container {
+		padding-top: 50px;
+		height: 500px;
+	}
+	
+	.tweet {
+		border-color: #545149;
+		border-style: solid;
+		opacity: .5;
+		margin-bottom: 30px;
+		
+	}
+	/*style for hover event */
+	.tweet:hover {
+		box-shadow: 5px 5px 2px grey;
+		opacity: 1;
+	}
+	
+	.tweet-handle {
+		opacity: 0;
+	}
+	
+	.tweet:hover .tweet-handle {
+		opacity: .5;
+	}
+	
+	
+	
+	.tweet-profile {
+		display: flex;
+	}
+	
+	.tweet-name {
+		display: inline;
+	}
+	
+	.tweet footer {
+		display: flex;
+		justify-content: space-between;
+		padding: 15px;
+	}
+	
+	.tweet-content {
+			font-size: 18px;
+			display: flex;
+			position: relative;
+			padding: 15px;
+	}
+	.tweet hr {
+		margin: 0 10px;
+		border-bottom: 2px solid #545149;
+		color: #545149;
+	}
+	
+	.tweet-handle {
+		opacity: 0;
+	}
 }
 
-.tweet-handle {
-	opacity: 0;
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .tweet header {
+		width: 50%;
+		margin-top: 0px;
+		margin-left: 0px;
+		height: 60px;
+		display: flex;
+    justify-content: space-between;
+	}
+	.tweet-profile {
+		height: 50px;
+	}
 }
