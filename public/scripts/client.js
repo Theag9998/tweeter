@@ -4,10 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
- // const $img = $('<img>').attr('src', ...)
+
 
  $(document).ready(function() {
-	
+//const moment = require('moment')
 
 
 //render list of new tweets
@@ -24,10 +24,9 @@ const renderTweets = function(tweets) {
 const createTweetElement = function(tweet) {
 	const $tweet = $('<article>').addClass("tweet");
 	//header
-	const $header = $('<header>');
+	const $tweetHeader = $('<div>').addClass("tweet-header");
 	const $tweetProfile = $('<div>').addClass("tweet-profile")
 	const $tweetPicture = $('<img>').attr('src', tweet.user.avatars)
-	//const $tweetPicture = $('<div>').addClass("tweet-picture").text("PICTURE")
 	const $tweetName = $('<div>').addClass("tweet-name").text(tweet.user.name);
 	const $tweetHandle = $("<div>").addClass("tweet-handle").text(tweet.user.handle)
 	//content
@@ -35,7 +34,7 @@ const createTweetElement = function(tweet) {
 	const $line = $('<hr />')
 	//footer
 	const $footer = $('<footer>');
-	const $datePosted = moment().startOf('day').fromNow();
+	const $datePosted = $("<div>").addClass("date-posted").text(moment(tweet['created_at']).fromNow());
 	//$("<div>").addClass("date-posted").text(tweet.created_at); //moment
 	//create links
 	const $links = $('<div>').addClass("little-links")
@@ -44,13 +43,13 @@ const createTweetElement = function(tweet) {
 	const $retweetlink = $('<i>').addClass("fas fa-retweet")
 	//append header
 	$tweetProfile.append($tweetPicture).append($tweetName)
-	$header.append($tweetProfile).append($tweetHandle)
+	$tweetHeader.append($tweetProfile).append($tweetHandle)
 	//append links
 	$links.append($flaglink).append($heartlink).append($retweetlink)
 	//append footer
 	$footer.append($datePosted).append($links)
 	//append file
-	$tweet.append($header).append($tweetContent).append($line).append($footer)
+	$tweet.append($tweetHeader).append($tweetContent).append($line).append($footer)
 
 	return $tweet;
 }

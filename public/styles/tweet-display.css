@@ -2,7 +2,7 @@
 
 /* Tablet Styles */
 @media only screen and (min-width: 500px) {
-  .tweet header {
+  .tweet-header {
 		background-color: #f4f1ec;
 		background-image: none;
 		display: flex;
@@ -72,10 +72,7 @@
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
-  .tweet header {
-		width: 50%;
-		margin-top: 0px;
-		margin-left: 0px;
+  .tweet-header {
 		height: 60px;
 		display: flex;
     justify-content: space-between;
