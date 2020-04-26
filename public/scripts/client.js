@@ -7,7 +7,6 @@
 
 
 $(document).ready(function() {
-//const moment = require('moment')
 
 
   //render list of new tweets
@@ -35,7 +34,6 @@ $(document).ready(function() {
     //footer
     const $footer = $('<footer>');
     const $datePosted = $("<div>").addClass("date-posted").text(moment(tweet['created_at']).fromNow());
-    //$("<div>").addClass("date-posted").text(tweet.created_at); //moment
     //create links
     const $links = $('<div>').addClass("little-links");
     const $flaglink = $('<i>').addClass("fas fa-flag");
@@ -60,21 +58,20 @@ $(document).ready(function() {
 
     event.preventDefault();
     const self = (this);
+    const characterReset = $(".counter").html(140)
     const characters = Number($(".counter").html());
     const formData = $(this).serialize();
+    $(".warning").slideUp("slow")
     //implement validation before sending text to server display warning if no text
     if (formData === "text=" || formData === "text=null") {
-      $(".warning").slideUp("slow");
       $(".warning").slideDown("slow").text("No text was entered!");
-		
+      
 
       //check character length display warning if characters over 140
     } else if (characters < 0) {
-      $(".warning").slideUp("slow");
-      $(".warning").slideDown("slow").text("Too many characters!");
-		
+      $(".warning").slideToggle("slow").text("Too many characters!");
+      
     } else {
-      $(".warning").slideUp("slow");
       $.post('/tweets', formData)
         .then(() => {
           $(self)[0].reset();
