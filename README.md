@@ -19,3 +19,8 @@ This repository is the starter code for the project: Students will fork and clon
 - chance 1.0.2 or above
 - md5 2.1.0 or above
 - moment 2.24.0 or above
+
+## Screenshots
+!["Screenshot of desktop view of tweeter"](https://github.com/Theag9998/tweeter/blob/master/docs/tweeter-desktopView.png?raw=true)
+!["Screenshot of tablet view of tweeter"](https://github.com/Theag9998/tweeter/blob/master/docs/tweeter-tabletView.png?raw=true)
+
