@@ -67,7 +67,7 @@ $(document).ready(function() {
       $(".warning").slideDown("slow").text("No text was entered!");
       
 
-      //check character length display warning if characters over 140
+    //check character length display warning if characters over 140
     } else if (characters < 0) {
       $(".warning").slideToggle("slow").text("Too many characters!");
       

@@ -5,7 +5,6 @@ $(document).ready(function() {
     let characterLength = $(this).val();
     //go up the dom tree to get access to counter
     let characterRemaining = $(this).parent().find(".counter").html(140 - characterLength.length);
-    //change the value of the character remaining into a number
     let numOfCharacterRemaining = Number($(characterRemaining).val());
     //if the number of characters remaing is negative turn the text red
     if (numOfCharacterRemaining < 0) {
