@@ -3,6 +3,6 @@ $(document).ready(function() {
 
 	$(".create-new-tweet").click(function(event) {
 		$(".new-tweet").slideToggle("slow");
-		//$(".new-tweet").slideUp("slow");
+		$("#tweet-text").focus()
 	})
 })
