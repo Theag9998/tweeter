@@ -58,7 +58,7 @@ $(document).ready(function() {
 
     event.preventDefault();
     const self = (this);
-    const characterReset = $(".counter").html(140)
+    
     const characters = Number($(".counter").html());
     const formData = $(this).serialize();
     $(".warning").slideUp("slow")
@@ -72,6 +72,8 @@ $(document).ready(function() {
       $(".warning").slideToggle("slow").text("Too many characters!");
       
     } else {
+    const characterReset = $(this).parent().find(".counter").html(140)
+    $(characterReset).css("color", "#545149");
       $.post('/tweets', formData)
         .then(() => {
           $(self)[0].reset();
