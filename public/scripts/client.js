@@ -72,7 +72,7 @@ $(document).ready(function() {
       $(".warning").slideToggle("slow").text("Too many characters!");
       
     } else {
-    const characterReset = $(this).parent().find(".counter").html(140)
+    const characterReset = $(this).parent().find(".counter").html(140);
     $(characterReset).css("color", "#545149");
       $.post('/tweets', formData)
         .then(() => {
