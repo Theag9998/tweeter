@@ -36,9 +36,12 @@
 	.tweet:hover .tweet-handle {
 		opacity: .5;
 	}
-	
-	
-	
+	.little-links {
+		opacity: 0;
+	}
+	.tweet:hover .little-links {
+		opacity: 1;
+	}
 	.tweet-profile {
 		display: flex;
 	}

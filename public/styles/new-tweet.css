@@ -2,6 +2,10 @@
 
 /* Tablet Styles */
 @media only screen and (min-width: 500px) {
+	.new-tweet {
+		display: none;
+	}
+
  	.new-tweet footer {
 		display: flex;
 		justify-content: space-between;
